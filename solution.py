@@ -1,11 +1,9 @@
 import pandas as pd
 import numpy as np
+from scipy.stats import kstest
 
-
-chat_id = 123456 # Ваш chat ID, не меняйте название переменной
+chat_id = 252623629
 
 def solution(x: np.array, y: np.array) -> bool:
-    # Измените код этой функции
-    # Это будет вашим решением
-    # Не меняйте название функции и её аргументы
-    return ... # Ваш ответ, True или False
+p_value = kstest(x, y)[1]
+return p_value < 0.05
